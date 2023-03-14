@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Random_PIU_Angular'`, () => {
+  it(`should have as title 'SinglePageInventoryApp'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Random_PIU_Angular');
+    expect(app.title).toEqual('SinglePageInventoryApp');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Random_PIU_Angular app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('SinglePageInventoryApp app is running!');
   });
 });
