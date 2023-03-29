@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body{
+    background: url(../../../images/background-website.avif);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+
+.card-container{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    top: 40%;
+    left: 40%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+  }
+  
+  @keyframes shadows{
+    0% { box-shadow: white 0 0 20px; }
+    25% {box-shadow: blue 0 0 20px; }
+    50% { box-shadow: purple 0 0 20px; }
+    75% { box-shadow: violet  0 0 20px; }
+    100% { box-shadow: white  0 0 20px; }
+  }
+  
+  .card{
+    content:url(../../../images/black_hole_Icon.png);
+    width: 175px;
+    height: 350px;
+    border: 3px solid #74018C;
+    background-color: #0f0f0f;
+    padding: 20px;
+    margin: 10px;
+    animation: shadows 4s infinite;
+  }
+  
+  .card-container.flip{
+    width: 100%;
+    height: 85%;
+    margin: 0;
+    left: 0;
+    top: 9%;
+    transform: scaleX(1) rotate(0deg);
+    transition: 0.5s ease;
+  }
+  
+  /* AICI INCEP CARTILE INDIVIDUALE */
+  
+  /* CARD 1 */
+  
+  #card1{
+    width: 175px;
+    height: 350px;
+    border: 3px solid #74018C;
+    background-color: #0f0f0f;
+    padding: 20px;
+    margin: 10px;
+    transform: rotate(-10deg);
+  }
+  
+  #card1:hover{
+    transform: scale(1.05) rotate(-10deg);
+  }
+  
+  #card1.flip{
+    width: 100%;
+    height: 100%;
+    content: none;
+    transform: scaleX(1) rotate(0deg);
+    transition: 0.5s ease;
+  }
+  
+  #h3_card1{
+    opacity: 1;
+    font-size: 40px;
+    font-family: 'Fredoka One', cursive;
+    -webkit-text-fill-color: white;
+  }
+  
+  /* CARD 1 */
+  
+  /* _______ */
+  
+  /* CARD 2 */
+  
+  #card2{
+    position: absolute;
+    transform: translateY(-20px);
+    margin-left: 300px;
+  }
+  
+  #card2:hover{
+    transform: translateY(-20px) scale(1.1);
+  }
+  
+  
+  #card2.flip{
+    margin-left: 0px;
+    width: 97%;
+    height: 100%;
+    content: none;
+    transform: scaleX(1);
+    transition: 0.5s ease;
+  }
+  
+  #h3_card2{
+    opacity: 1;
+    font-size: 40px;
+    font-family: 'Fredoka One', cursive;
+    -webkit-text-fill-color: white;
+  }
+  
+  /* CARD 2 */
+  
+  /* _______ */
+  
+  /* CARD 3 */
+  
+  #card3{
+    position: absolute;
+    transform: translateY(-20px);
+    transform: rotate(10deg);
+    margin-left: 650px;
+  }
+  
+  #card3:hover{
+    transform: rotate(10deg) scale(1.1);
+  }
+  
+  #card3.flip{
+    margin-left: 0px;
+    width: 97%;
+    height: 100%;
+    content: none;
+    transform: scaleX(1);
+    transition: 0.5s ease;
+  }
+  
+  #h3_card3{
+    opacity: 1;
+    font-size: 40px;
+    font-family: 'Fredoka One', cursive;
+    -webkit-text-fill-color: white;
+  }
+  
+  /* AICI SE TERMINA CARD3 */

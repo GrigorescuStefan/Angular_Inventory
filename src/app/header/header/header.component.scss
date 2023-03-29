@@ -1,59 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-.navbar{
-    font-size: 40px;
-    font-family: 'Fredoka One', cursive;
-    background-color: #222222;
-    display: grid;
-    position: absolute;
-    top:0;
-    left: 0;
-    right: 0;
-    height: 80px;
+.navbar {
+  font-size: 40px;
+  font-family: 'Fredoka One', cursive;
+  background-color: #222222;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
 }
 
 .navbar_container{
-    text-align: center;
-    margin-top: 10px;
+  display: grid; 
+  grid-template-columns: 10% 90%;
+  grid-template-rows: 1fr;
+  gap: 0px 0px; 
+  grid-template-areas: ". .";
 }
 
-.logo{
-    font-size: 50px;
-    background-image: linear-gradient(45deg, #f664f8, #1d077c);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    float:left;
-    margin-left: 10px;
-    text-shadow: 
+.logo {
+  font-size: 50px;
+  background-image: linear-gradient(45deg, #f664f8, #1d077c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    1px 2px 15px #AE01B1,
+    1px 0px 60px #f609fa;
+  display: flex; 
+  align-items: center;
+  justify-content: left;
+  margin-left: 10px;
+}
+
+.navbar_list {
+  background-image: linear-gradient(45deg, #f664f8, #1d077c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: right;
+  margin-top: 20px;
+  text-shadow:
     1px 2px 15px #AE01B1,
     1px 0px 60px #f609fa;
 }
 
-.navbar_list{
-    background-image: linear-gradient(45deg, #f664f8, #1d077c);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    float:right;
-    text-align: center;
-    margin-top: 10px;
-    margin-right: 0px;
-    text-shadow: 
-    1px 2px 15px #730475,
-    1px 0px 60px #f609fa;
+button {
+  -webkit-text-fill-color: white;
+  background-color: #74018C;
+  font-family: 'Fredoka One', cursive;
+  border: none;
+  font-size: 30px;
+  margin-bottom: 15px;
 }
 
-button{
-    -webkit-text-fill-color: white;
-    background-color: #74018C;
-    font-family: 'Fredoka One', cursive;
-    border: none;
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.listbuttons{
+.listbuttons {
   margin-right: 10px;
 }
 
@@ -65,7 +67,7 @@ button{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin:auto;
+  margin: auto;
   cursor: pointer;
 }
 
@@ -75,7 +77,7 @@ button{
   margin-right: 15px;
   border-radius: 4px;
   margin-bottom: 10px;
-  background-color:  white;
+  background-color: white;
   transition: .40s ease-in-out;
 }
 
@@ -83,56 +85,59 @@ button{
   margin-bottom: 0px;
 }
 
-@media screen and (max-width: 1000px){
-    .listbuttons{
-        display:none;
-    }
-    .container{
-      display: flex;
-    }
-  }
-  
-  @keyframes growDown {
-    0% {
-        transform: scaleY(0)
-    }
-    80% {
-        transform: scaleY(1.1)
-    }
-    100% {
-        transform: scaleY(1)
-    }
-  }
-  
-  .dropdown-menu {
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 100%;
-    height: 300px;
+@media screen and (max-width: 1000px) {
+  .listbuttons {
     display: none;
-    background: #222222;
-    padding: 10px;
-    animation: growDown 400ms ease-in-out forwards;
-    transform-origin: top center;
   }
-  
-  .dropdown-menu.open {
-    display: grid;
-    z-index: 9999;
+
+  .container {
+    display: flex;
   }
-  
-  .buttonsDW{
-    -webkit-text-fill-color: #74018C;
-    font-family: 'Fredoka One', cursive;
-    border: none;
-    font-size: 30px;
-    margin-bottom: 15px;
-    text-align: center;
-    text-shadow: none;
-    text-decoration: none;
+}
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0)
   }
-  
-  .dropdown-menu button{
-    -webkit-text-fill-color: white;
+
+  80% {
+    transform: scaleY(1.1)
   }
+
+  100% {
+    transform: scaleY(1)
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 100%;
+  height: 300px;
+  display: none;
+  background: #222222;
+  padding: 10px;
+  animation: growDown 400ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+.dropdown-menu.open {
+  display: grid;
+  z-index: 9999;
+}
+
+.buttonsDW {
+  -webkit-text-fill-color: #74018C;
+  font-family: 'Fredoka One', cursive;
+  border: none;
+  font-size: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: none;
+  text-decoration: none;
+}
+
+.dropdown-menu button {
+  -webkit-text-fill-color: white;
+}
