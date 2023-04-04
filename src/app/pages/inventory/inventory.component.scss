@@ -1,14 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 body{
-    background: url(../../images/background-website.avif);
+    background: url(../../images/background-inventory.jpg);
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
 }
 
-#h2{
-    position: absolute;
-    margin-top: 5%;
-    margin-left: 45%;
-    -webkit-text-fill-color: rgb(255, 255, 255);
+.items {
+    top: 0;
+    padding-left: 50px;
+    padding-top: 30px;
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.item{
+    box-shadow: 10px;
+    padding-top: 10px;
+    text-align: center;
+    width: 200px;
+    height: 130px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'Fredoka One', cursive;
+    background-color: #3F0362;
+    -webkit-text-fill-color: white;
+    animation: shadows 4s infinite;
+}
+
+@keyframes shadows{
+    0% { box-shadow: white 0 0 20px; }
+    25% {box-shadow: blue 0 0 20px; }
+    50% { box-shadow: purple 0 0 20px; }
+    75% { box-shadow: violet  0 0 20px; }
+    100% { box-shadow: white  0 0 20px; }
+  }
+
+button{
+    font-family: 'Fredoka One', cursive;
+}
+
+.edit{
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-left: 25px;
+    background-color: green;
+    -webkit-text-fill-color: white;
+}
+
+.delete{
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: red;
+    -webkit-text-fill-color: white;
+}
+
+.edit:hover{
+    background-color: lime;
+}
+
+.delete:hover{
+    background-color: rgb(200, 0, 0);
 }

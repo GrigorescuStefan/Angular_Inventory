@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,6 +8,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
 import { ContactComponent } from './pages/contact/contact/contact.component';
 import { AboutComponent } from './pages/about/about/about.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormComponent } from './pages/form/form.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,16 @@ import { AboutComponent } from './pages/about/about/about.component';
     HomeComponent,
     InventoryComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
