@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-form',
@@ -10,7 +10,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 export class FormComponent implements OnInit{
 
   form!: FormGroup;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(public dialogRef: MatDialogRef<FormComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: string[], private formBuilder: FormBuilder) { }
 
   ngOnInit(): void{
     this.createForm();

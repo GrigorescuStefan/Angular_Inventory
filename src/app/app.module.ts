@@ -10,7 +10,9 @@ import { ContactComponent } from './pages/contact/contact/contact.component';
 import { AboutComponent } from './pages/about/about/about.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './pages/form/form.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     FormComponent
   ],
   imports: [
+    HttpClientModule,
+    MatDialogModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
