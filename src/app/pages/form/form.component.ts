@@ -5,15 +5,17 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  styleUrls: ['./form.component.scss'],
 })
-export class FormComponent implements OnInit{
-
+export class FormComponent implements OnInit {
   form!: FormGroup;
-  constructor(public dialogRef: MatDialogRef<FormComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: string[], private formBuilder: FormBuilder) { }
+  constructor(
+    public dialogRef: MatDialogRef<FormComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: string[],
+    private formBuilder: FormBuilder
+  ) {}
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.createForm();
   }
 
@@ -21,7 +23,7 @@ export class FormComponent implements OnInit{
     this.form = this.formBuilder.group({
       nume: [null],
       descriere: [null],
-      cantitate: [null]
-    })
+      cantitate: [null],
+    });
   }
 }
