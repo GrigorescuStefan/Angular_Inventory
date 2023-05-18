@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  isDropdownOpen = false;
 
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }  
 }

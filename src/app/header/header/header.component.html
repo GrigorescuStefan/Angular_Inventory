@@ -6,11 +6,11 @@
             <a href="/about" class="listbuttons">About</a>
             <a href="/contact" class="listbuttons">Contact</a>
             <button class="listbuttons">Sign Up</button>
-                <div class="container" id="burger" onclick="burgerAnimation()">
-                    <div class="stick stick-1" id="stick1"></div>
-                    <div class="stick stick-2" id="stick2"></div>
-                    <div class="stick stick-3" id="stick3"></div>
-                    <div class="dropdown-menu">
+                <div class="container" id="burger" (click)="toggleDropdown()">
+                    <div class="stick stick-1" [ngClass]="{ 'rotate-right': isDropdownOpen }"></div>
+                    <div class="stick stick-2" [ngClass]="{ 'fade-out': isDropdownOpen }"></div>
+                    <div class="stick stick-3" [ngClass]="{ 'rotate-left': isDropdownOpen }"></div>
+                    <div class="dropdown-menu" [ngClass]="{ 'show': isDropdownOpen }">
                         <a href="/inventory" class="buttonsDW">Inventory</a>
                         <a href="/about" class="buttonsDW">About</a>
                         <a href="/contact" class="buttonsDW">Contact</a>

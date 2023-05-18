@@ -35,10 +35,12 @@ body{
     50% { box-shadow: purple 0 0 20px; }
     75% { box-shadow: violet  0 0 20px; }
     100% { box-shadow: white  0 0 20px; }
-  }
+}
 
 button{
-    font-family: 'Fredoka One', cursive;
+    display: flex;
+    justify-content: center;
+    width: 45px;
 }
 
 .edit{
@@ -62,4 +64,21 @@ button{
 
 .delete:hover{
     background-color: rgb(200, 0, 0);
+}
+
+.plus_button{
+    justify-content: center;
+    background-color: #f664f8;
+    border: none;
+    border-radius: 11px;
+    -webkit-text-fill-color: white;
+    margin-left: 1%;
+    scale: 1.2;
+    font-family: 'Fredoka One', cursive;
+}
+
+.plus_button:hover{
+    transition: 0.3s;
+    opacity: 80%;
+    cursor: pointer;
 }
