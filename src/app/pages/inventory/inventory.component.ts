@@ -1,8 +1,7 @@
-import { NgIfContext } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormComponent } from '../form/form.component';
-import { ItemService } from 'src/app/services/item.service';
+import { ItemService } from '../../services/item.service';
 import { Item } from 'src/models/item';
 
 @Component({
@@ -13,8 +12,11 @@ import { Item } from 'src/models/item';
 export class InventoryComponent implements OnInit {
   error?: string;
   itemList!: Item[];
-  items: string[] = ['Maia', 'Maia', 'Maia', 'Maia', 'Maia', 'Maia'];
   constructor(public dialog: MatDialog, public itemService: ItemService) {}
+
+  ngOnInit(): void {
+    this.getItems();
+  }
 
   getItems(): void {
     this.itemService.getItems().subscribe(
@@ -27,13 +29,15 @@ export class InventoryComponent implements OnInit {
     );
   }
 
-  deleteItem(id: number | undefined): void {
-    this.itemService.deleteItem(id!).subscribe(
-      () => {
-        window.location.reload();
-      },
-      (err) => {}
-    );
+  deleteItem(id: number | undefined) {
+      this.itemService.deleteItem(id!).subscribe(
+        () => {
+          this.getItems();
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
 
   getItemById(id: number): void {
@@ -48,16 +52,15 @@ export class InventoryComponent implements OnInit {
     this.itemService.editItem(item!).subscribe();
   }
 
-  async openDialog() {
+  openDialog(id: number | null | undefined): void {
     const dialogRef = this.dialog.open(FormComponent, {
-      width: '250px',
-      data: { items: this.items },
+      width: '300px',
+      data: { idToBeEdited: id },
     });
 
     dialogRef.afterClosed().subscribe(() => {
+      this.getItems();
       console.log('The dialog was closed');
     });
   }
-
-  ngOnInit(): void {}
 }

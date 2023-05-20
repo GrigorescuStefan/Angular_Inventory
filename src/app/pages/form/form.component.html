@@ -1,24 +1,21 @@
 <body>
 <div class="Form" [formGroup]="form">
     <mat-form-field appearance="fill">
-        <mat-label>Fill form field</mat-label>
-        <input matInput type="text" formControlName="nume" placeholder="Nume">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
+        <input matInput type="text" formControlName="name" placeholder="Nume">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-        <mat-label>Fill form field</mat-label>
-        <input matInput type="text" formControlName="descriere" placeholder="Descriere">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
+        <input matInput type="text" formControlName="description" placeholder="Descriere">
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-        <mat-label>Fill form field</mat-label>
-        <input matInput type="text" formControlName="cantitate" placeholder="cantitate">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint>Hint</mat-hint>
+        <input matInput type="text" formControlName="quantity" placeholder="Cantitate">
     </mat-form-field>
+</div>
+<div class="button-container">
+    <button mat-raised-button class="inventory-button" (click)="saveItem()">
+        {{ formButtonText }}
+    </button>
+      <button mat-raised-button class="inventory-button" (click)="closeDialog()">Close</button>
 </div>
 </body>

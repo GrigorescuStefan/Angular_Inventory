@@ -7,26 +7,38 @@ import { Item } from 'src/models/item';
   providedIn: 'root',
 })
 export class ItemService {
-  readonly baseURL = 'http://localhost:44385/api/item';
+  readonly baseUrl = 'http://127.0.0.1:5000';
   constructor(public httpClient: HttpClient) {}
 
   getItems(): Observable<Item[]> {
-    return this.httpClient.get(this.baseURL + 'get') as Observable<Item[]>;
+    return this.httpClient.get(this.baseUrl + '/piu/get_all_items') as Observable<Item[]>;
   }
 
   getItemById(id: number): Observable<Item> {
-    return this.httpClient.get(this.baseURL + 'getitems/' + id) as Observable<Item>;
+    return this.httpClient.get(
+      this.baseUrl + '/piu/get_item_by_id/' + id
+    ) as Observable<Item>;
   }
 
-  createItem(item: Item): Observable<Item> {
-    return this.httpClient.post(this.baseURL + 'post', item) as Observable<Item>;
+  createItem(item: Item): Observable<string> {
+    console.log(item)
+    return this.httpClient.post(
+      this.baseUrl + '/piu/create_item',
+      item
+    ) as Observable<string>;
   }
 
-  deleteItem(id: number): Observable<null> {
-    return this.httpClient.delete(this.baseURL + 'delete/' + id) as unknown as Observable<null>;
+  deleteItem(id: number): Observable<string> {
+    return this.httpClient.delete(
+      this.baseUrl + '/piu/delete_item_by_id/' + id
+    ) as unknown as Observable<string>;
   }
 
-  editItem(item: Item): Observable<null> {
-    return this.httpClient.put(this.baseURL + 'edit/' + item.id, item) as unknown as Observable<null>;
+  editItem(item: Item): Observable<string> {
+    console.log(item)
+    return this.httpClient.put(
+      this.baseUrl + '/piu/update_item/' + item._id,
+      item
+    ) as unknown as Observable<string>;
   }
 }

@@ -1,15 +1,17 @@
 <body>
+    <button class="plus_button" mat-fab color="accent" (click)="openDialog(0)">
+        <mat-icon>add</mat-icon>
+      </button>
     <div>{{error}}</div>
     <div class="items">
         <div *ngFor=" let item of itemList" class="item">
-            <p>Nume: {{item.name}}</p>
-            <p>Descriere: {{item.category}}</p>
-            <p>Cantitate: {{item.number}}</p>
-            <button class="delete" (click)="deleteItem(item.id)">delete</button>
-            <button class="edit">edit</button>
+            <p>Nume: {{ item.name }}</p>
+            <p>Descriere: {{ item.description }}</p>
+            <p>Cantitate: {{ item.quantity }}</p>
+            <div class="button-container">
+            <button class="delete" (click)="deleteItem(item._id)">Delete</button>
+            <button class="edit" (click)="openDialog(item._id)">Edit</button>
+            </div>
         </div>
     </div>
-    <button class="plus_button" mat-fab color="accent" (click)="openDialog()">
-        <mat-icon>add</mat-icon>
-      </button>
 </body>
