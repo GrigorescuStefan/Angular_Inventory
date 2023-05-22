@@ -14,9 +14,9 @@ export class ItemService {
     return this.httpClient.get(this.baseUrl + '/piu/get_all_items') as Observable<Item[]>;
   }
 
-  getItemById(id: number): Observable<Item> {
+  getItemById(_id: number): Observable<Item> {
     return this.httpClient.get(
-      this.baseUrl + '/piu/get_item_by_id/' + id
+      this.baseUrl + '/piu/get_item_by_id/' + _id
     ) as Observable<Item>;
   }
 
@@ -28,9 +28,9 @@ export class ItemService {
     ) as Observable<string>;
   }
 
-  deleteItem(id: number): Observable<string> {
+  deleteItem(_id: number): Observable<string> {
     return this.httpClient.delete(
-      this.baseUrl + '/piu/delete_item_by_id/' + id
+      this.baseUrl + '/piu/delete_item_by_id/' + _id
     ) as unknown as Observable<string>;
   }
 

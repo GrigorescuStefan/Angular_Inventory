@@ -1,6 +1,41 @@
-<body><div class="card-container" id="card-container">
-    <div class="card" id="card1"><h3 id="h3_card1">Card I</h3></div>
-    <div class="card" id="card2"><h3 id="h3_card2">Card II</h3></div>
-    <div class="card" id="card3"><h3 id="h3_card3">Card III</h3></div>
-</div>
+<body>
+    <div class="card-container" id="card-container">
+        <div class="card" id="card1" [class.flip]="isCard1Open" (click)="toggleCardOpen('card1')">
+            <h3 id="h3_card1">
+                    Grigorescu Stefan - Front End Developer
+                    <br /><br />
+                    Finished the design, styling, animation and functionality of the website
+                    <br /><br />
+                    Technologies used: 
+                    <ul>
+                        <li>Language: TypeScript</li>
+                        <br /><li>Framework: Angular</li>
+                        <br /><a href="https://github.com/GrigorescuStefan" class="github-link">Github Link</a>
+                    </ul>
+            </h3>
+        </div>
+        <div class="card" id="card2" [class.flip]="isCard2Open" (click)="toggleCardOpen('card2')">
+            <h3 id="h3_card2">
+                    Andrei Mihai - Back End Developer
+                    <br /><br />
+                    Set up the database and backend API for our inventory
+                    <br /><br />
+                    Technologies used:
+                    <ul>
+                        <li>Language: Python</li>
+                        <br /><li>Database: MongoDB</li>
+                        <br /><li>Web Server Gateway Interface: Flask</li>
+                        <br /><li>JSON Encoder: bson</li>
+                        <br /><a href="https://github.com/Mihaidono" class="github-link">Github Link</a>
+                    </ul>
+            </h3>
+        </div>
+        <div class="card" id="card3" [class.flip]="isCard3Open" (click)="toggleCardOpen('card3')">
+            <h3 id="h3_card3">
+                    Anonymous - Software Tester
+                    <br />
+                    Tested the entire website to make sure everything is in working order
+            </h3>
+        </div>
+    </div>
 </body>
