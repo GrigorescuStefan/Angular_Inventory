@@ -3,18 +3,16 @@
         <a href="/" class="logo">TKT</a> 
         <div class="navbar_list">
             <a href="/inventory" class="listbuttons">Inventory</a>
-            <a href="/about" class="listbuttons">About</a>
-            <a href="/contact" class="listbuttons">Contact</a>
-            <button class="listbuttons">Sign Up</button>
+            <a href="/contact" class="listbuttons">Members</a>
+            <button (click)="loginPageSwitch()" class="listbuttons">Contact us</button>
                 <div class="container" id="burger" (click)="toggleDropdown()">
                     <div class="stick stick-1" [ngClass]="{ 'rotate-right': isDropdownOpen }"></div>
                     <div class="stick stick-2" [ngClass]="{ 'fade-out': isDropdownOpen }"></div>
                     <div class="stick stick-3" [ngClass]="{ 'rotate-left': isDropdownOpen }"></div>
                     <div class="dropdown-menu" [ngClass]="{ 'show': isDropdownOpen }">
                         <a href="/inventory" class="buttonsDW">Inventory</a>
-                        <a href="/about" class="buttonsDW">About</a>
-                        <a href="/contact" class="buttonsDW">Contact</a>
-                        <button class="buttonsDW">Sign Up</button>
+                        <a href="/contact" class="buttonsDW">Members</a>
+                        <button (click)="loginPageSwitch()" class="buttonsDW">Contact us</button>
                     </div>
             </div>
         </div>

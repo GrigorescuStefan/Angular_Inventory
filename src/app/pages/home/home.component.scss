@@ -1,5 +1,205 @@
-body{
-    background: url(../../images/background-inventory.jpg);
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.split-bg-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.top-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 100vw 100vh;
+}
+
+.bottom-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.top-bg {
+    z-index: 4;
+    background-image: url('../../images/background-inventory.jpg');
+}
+
+.bottom-bg {
+    z-index: 5;
+    background-image: url('../../images/background-inventory.jpg');
+    top: 67vh;
+    transform: scaleY(-1);
+    height: 67vh;
+}
+
+.home-text {
+    text-shadow: 1px 2px 15px #AE01B1, 1px 0px 60px #f609fa;
+    font-size: 40px;
+    font-family: 'Fredoka One', cursive;
+    position: absolute;
+    top: 0;
+    -webkit-text-fill-color: white;
+    margin-top: 25%;
+    margin-left: 20%;
+}
+
+.home-text-mobile {
+    opacity: 0;
+    user-select: none;
+    text-shadow: 1px 2px 15px #AE01B1, 1px 0px 60px #f609fa;
+    font-size: 40px;
+    font-family: 'Fredoka One', cursive;
+    position: absolute;
+    top: 0;
+    -webkit-text-fill-color: white;
+    margin-top: 25%;
+    margin-left: 20%;
+}
+
+.warehouse {
+    position: absolute;
+    top: 0;
+    margin-top: 12.5%;
+    margin-left: 54.5%;
+}
+
+.warehouse-colored {
+    opacity: 65%;
+    position: absolute;
+    top: 0;
+    margin-top: 12%;
+    margin-left: 55%;
+}
+
+.warehouse-mirrored {
+    opacity: 40%;
+    position: absolute;
+    top: 0;
+    margin-top: 17.5%;
+    margin-left: 58.5%;
+    transform: scaleY(-1) scale(1.4, 1.2);
+    z-index: 3;
+}
+
+.warehouse-colored-mirrored {
+    opacity: 40%;
+    position: absolute;
+    top: 0;
+    margin-top: 17.5%;
+    margin-left: 59%;
+    transform: scaleY(-1) scale(1.4, 1.2);
+    z-index: 2;
+}
+
+@media screen and (max-width: 1600px) {
+    .bottom-bg {
+        top: 55vh;
+        transform: scaleY(-1);
+        height: 55vh;
+    }
+
+    .home-text{
+        margin-top: 25%;
+    }
+
+    .warehouse {
+        position: absolute;
+        top: 0;
+        margin-top: 7.5%;
+        margin-left: 54.5%;
+    }
+    
+    .warehouse-colored {
+        opacity: 65%;
+        position: absolute;
+        top: 0;
+        margin-top: 7%;
+        margin-left: 55%;
+    }
+
+    .warehouse-mirrored {
+        opacity: 40%;
+        position: absolute;
+        top: 0;
+        margin-top: 11.5%;
+        margin-left: 59.5%;
+        transform: scaleY(-1) scale(1.4, 1.2);
+        z-index: 3;
+    }
+    
+    .warehouse-colored-mirrored {
+        opacity: 40%;
+        position: absolute;
+        top: 0;
+        margin-top: 11.5%;
+        margin-left: 59%;
+        transform: scaleY(-1) scale(1.4, 1.2);
+        z-index: 2;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .top-bg{
+        height: 50%;
+        width: 100vw;
+    }
+
+    .bottom-bg {
+        top: 50vh;
+        transform: scaleY(-1);
+        height: 50vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    .home-text{
+        opacity: 0;
+        user-select: none;
+    }
+
+    .home-text-mobile {
+        opacity: 1;
+        user-select: all;
+    }
+
+    .warehouse {
+        position: absolute;
+        top: 0;
+        margin-top: 7.5%;
+        margin-left: 54.5%;
+    }
+    
+    .warehouse-colored {
+        opacity: 65%;
+        position: absolute;
+        top: 0;
+        margin-top: 7%;
+        margin-left: 55%;
+    }
+
+    .warehouse-mirrored {
+        opacity: 40%;
+        position: absolute;
+        top: 0;
+        margin-top: 12.5%;
+        margin-left: 61.5%;
+        transform: scaleY(-1) scale(1.35, 1.2);
+        z-index: 3;
+    }
+    
+    .warehouse-colored-mirrored {
+        opacity: 40%;
+        position: absolute;
+        top: 0;
+        margin-top: 12.5%;
+        margin-left: 62.5%;
+        transform: scaleY(-1) scale(1.35, 1.2);
+        z-index: 2;
+    }
 }

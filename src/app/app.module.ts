@@ -7,7 +7,6 @@ import { HeaderComponent } from './header/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
 import { ContactComponent } from './pages/contact/contact/contact.component';
-import { AboutComponent } from './pages/about/about/about.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './pages/form/form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -15,6 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { LoginFormComponent } from './login-form/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,8 @@ import { MatInputModule } from '@angular/material/input';
     HomeComponent,
     InventoryComponent,
     ContactComponent,
-    AboutComponent,
-    FormComponent
+    FormComponent,
+    LoginFormComponent
   ],
   imports: [
     HttpClientModule,
