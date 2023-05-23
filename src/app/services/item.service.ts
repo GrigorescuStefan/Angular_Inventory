@@ -20,15 +20,16 @@ export class ItemService {
     ) as Observable<Item>;
   }
 
-  createItem(item: Item): Observable<string> {
-    console.log(item)
+  createItem(item: Item): Observable<Item> {
+    delete item._id;
     return this.httpClient.post(
       this.baseUrl + '/piu/create_item',
       item
-    ) as Observable<string>;
+    ) as Observable<Item>;
   }
 
   deleteItem(_id: number): Observable<string> {
+    console.log("ID Servicii",_id)
     return this.httpClient.delete(
       this.baseUrl + '/piu/delete_item_by_id/' + _id
     ) as unknown as Observable<string>;
@@ -36,8 +37,10 @@ export class ItemService {
 
   editItem(item: Item): Observable<string> {
     console.log(item)
+    let _id = item._id
+    delete item._id;
     return this.httpClient.put(
-      this.baseUrl + '/piu/update_item/' + item._id,
+      this.baseUrl + '/piu/update_item/' + _id,
       item
     ) as unknown as Observable<string>;
   }

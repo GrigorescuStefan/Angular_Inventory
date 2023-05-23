@@ -30,34 +30,25 @@ export class FormComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  collectionLength(): Observable<number> {
-    return this.itemService
-      .getItems()
-      .pipe(map((list: Item[]) => list.length + 1));
-  }
-
   saveItem(): void {
-    this.collectionLength().subscribe((length: number) => {
       const item: Item = {
-        _id: this.isEditing ? this.data.idToBeEdited : length,
-        name: this.form.get('name')?.value,
-        description: this.form.get('description')?.value,
-        quantity: this.form.get('quantity')?.value,
+        _id: this.data.idToBeEdited,
+        name: this.form.value.name,
+        description: this.form.value.description,
+        quantity: this.form.value.quantity,
       };
-
       if (this.isEditing) {
-        console.log(this.data.idToBeEdited);
         this.itemService.editItem(item).subscribe();
+        this.dialogRef.close();
       } else {
         this.itemService.createItem(item).subscribe();
+        this.dialogRef.close();
       }
-      this.dialogRef.close();
-      window.location.reload();
-    });
   }
 
   ngOnInit(): void {
     this.createForm();
+
     if (this.data.idToBeEdited) {
       this.isEditing = true;
       this.formButtonText = 'Save';

@@ -29,8 +29,8 @@ export class InventoryComponent implements OnInit {
     );
   }
 
-  deleteItem(id: number | undefined) {
-      this.itemService.deleteItem(id!).subscribe(
+  deleteItem(_id: number | undefined) {
+      this.itemService.deleteItem(_id!).subscribe(
         () => {
           this.getItems();
         },
@@ -40,8 +40,8 @@ export class InventoryComponent implements OnInit {
       );
   }
 
-  getItemById(id: number): void {
-    this.itemService.getItemById(id!).subscribe();
+  getItemById(_id: number): void {
+    this.itemService.getItemById(_id!).subscribe();
   }
 
   createItem(item: Item): void {
@@ -60,7 +60,7 @@ export class InventoryComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(() => {
       this.getItems();
-      console.log('The dialog was closed');
+      // console.log('The dialog was closed');
     });
   }
 }

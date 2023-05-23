@@ -62,6 +62,11 @@ button:hover{
   -webkit-text-fill-color: #74018C;
   background-color: white;
   transition: 0.5s;
+  font-family: 'Fredoka One', cursive;
+  border: 2px;
+  border-radius: 15px;
+  font-size: 30px;
+  margin-bottom: 15px;
 }
 
 .listbuttons {
@@ -150,16 +155,22 @@ button:hover{
 }
 
 .buttonsDW {
-  -webkit-text-fill-color: #74018C;
+  -webkit-text-fill-color: #f664f8;
   font-family: 'Fredoka One', cursive;
   border: none;
   font-size: 30px;
   margin-bottom: 15px;
   text-align: center;
-  text-shadow: none;
+  text-shadow:
+  1px 2px 15px #AE01B1,
+  1px 0px 60px #f609fa;
   text-decoration: none;
 }
 
 .dropdown-menu button {
   -webkit-text-fill-color: white;
+}
+
+.dropdown-menu button:hover {
+  -webkit-text-fill-color: #74018C;
 }
