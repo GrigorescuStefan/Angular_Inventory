@@ -29,7 +29,6 @@ export class ItemService {
   }
 
   deleteItem(_id: number): Observable<string> {
-    console.log("ID Servicii",_id)
     return this.httpClient.delete(
       this.baseUrl + '/piu/delete_item_by_id/' + _id
     ) as unknown as Observable<string>;
